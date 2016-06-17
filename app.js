@@ -26,15 +26,15 @@ app.configure('production', function() {
 // Heroku won't actually allow us to use WebSockets
 // so we have to setup polling instead.
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-io.configure(function () { 
+/*io.configure(function () { 
   io.set("transports", ["xhr-polling"]); 
   io.set("polling duration", 10); 
-});
+});*/
 
 // Routes
 
-// Use the port that Heroku provides or default to 5000
-var port = process.env.PORT || 5000; 
+// Use the port that Heroku provides or default to 8000
+var port = process.env.PORT || 8000; 
 app.listen(port, function() {
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
